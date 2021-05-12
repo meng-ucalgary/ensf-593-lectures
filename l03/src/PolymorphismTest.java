@@ -14,8 +14,8 @@ public class PolymorphismTest {
 		
 		
 		// Testing equals()
-		Object s0 = new Object(); //Student("12345");
-		Object s1 = new Object(); //Student("12345");
+		Student s0 = new Student("12345"); //Student("12345");
+		Student s1 = new Student("12345"); //Student("12345");
 		System.out.println(s0);
 		System.out.println(s1);
 		System.out.println(s0.equals(s1));
