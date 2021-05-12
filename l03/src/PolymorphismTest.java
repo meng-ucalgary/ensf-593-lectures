@@ -14,12 +14,15 @@ public class PolymorphismTest {
 		
 		
 		// Testing equals()
-		Student s0 = new Student("12345"); //Student("12345");
-		Student s1 = new Student("12345"); //Student("12345");
+		Object s0 = new Student("12345"); //Student("12345");
+		Object s1 = new Student("12345"); //Student("12345");
+		Object s2 = s0;
+		
 		System.out.println(s0);
 		System.out.println(s1);
-		System.out.println(s0.equals(s1));
-		System.out.println(s0 == s1);
+		System.out.println(s0.equals(s1)); //true
+		System.out.println(s0 == s1); //false
+		System.out.println(s0 == s2); //true
 		
 
 	}
