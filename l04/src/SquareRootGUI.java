@@ -7,16 +7,16 @@ import java.awt.event.*;
  * @author Yves
  *
  */
-public class GreeterGUI extends JFrame 
+public class SquareRootGUI extends JFrame 
 						implements ActionListener{
 	
 	private JTextArea display;
 	private JTextField inField;
 	private JButton goButton;
-	private Greeter greeter;
+//	private Greeter greeter;
 	
-	public GreeterGUI(String title) {
-		greeter = new Greeter();
+	public SquareRootGUI(String title) {
+//		greeter = new Greeter();
 		buildGUI();
 		setTitle(title);
 		setSize(300, 200);
@@ -33,7 +33,7 @@ public class GreeterGUI extends JFrame
 		// instantiate all instance variables
 		display = new JTextArea(10,30);
 		inField = new JTextField(10);
-		goButton = new JButton("Click here for a greeting");
+		goButton = new JButton("Calculate sqrt");
 		
 		
 		//adding action listeners
@@ -41,7 +41,7 @@ public class GreeterGUI extends JFrame
 		
 		
 		JPanel inputPanel = new JPanel();
-		inputPanel.add(new JLabel("Input your name here: ")); 
+		inputPanel.add(new JLabel("Input a positive number, e.g 2.0: ")); 
 		inputPanel.add( inField );
 		
 		contentPane.add("North", inputPanel);
@@ -55,8 +55,10 @@ public class GreeterGUI extends JFrame
 		//TODO implement button callback
 		if(e.getSource() == goButton) {
 			String name = inField.getText();
+			double number = Double.parseDouble(name);
 			
-			display.setText(greeter.greet(name));
+			display.setText("Sqare root of "+number+
+			        " = " + NewtonSquareRoot.getSquareRoot(number)) ;
 		}
 		
 	}
@@ -66,7 +68,7 @@ public class GreeterGUI extends JFrame
 	public static void main(String[] args) {
 		
 		//TODO change so that GUI has a run() method similar to GreeterApp
-		new GreeterGUI("Greeter");
+		new SquareRootGUI("Square-rooter");
 	}
 
 }

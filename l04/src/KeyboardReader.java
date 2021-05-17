@@ -43,4 +43,9 @@ public class KeyboardReader {
 		// TODO Auto-generated method stub
 		return readKeyboard();
 	}
+
+	public double getKeyboardDouble() {
+		// TODO Auto-generated method stub
+		return Double.parseDouble(getKeyboardInput());
+	}
 }
