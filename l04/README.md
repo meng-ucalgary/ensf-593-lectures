@@ -17,7 +17,7 @@ Nothing to work on.
 
 ## Study command-line interface
 - `KeyboardReader.java` Fig 4.7 p 157
-- `GreeterApp.java` Fig 4.7 p. 159
+- `GreeterApp.java` Fig 4.9 p. 159
 
 ## Create a Command-Line Interface to calculate square-root
 Turn `GreeterApp.java` into a program that asks user for a number and prints the square-root of the number. 

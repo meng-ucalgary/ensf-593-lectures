@@ -13,6 +13,7 @@ public class KeyboardReader {
 	public KeyboardReader() {
 		reader = new BufferedReader(
 				new InputStreamReader(System.in));
+		
 	}
 	
 	//TODO add missing methods
@@ -36,5 +37,10 @@ public class KeyboardReader {
 			e.printStackTrace();
 		}
 		return line;
+	}
+
+	public String getKeyboardInput() {
+		// TODO Auto-generated method stub
+		return readKeyboard();
 	}
 }
