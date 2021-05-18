@@ -23,5 +23,15 @@ public class DataTypeTest {
 		System.out.println("13.0/5 = "+ (13.0/5));
 		System.out.println("(int)13.5 / 5 = "+((int)13.5 / 5));
 		System.out.println("13%5 = "+ (13%5));
+		
+		System.out.println("----------------------------------------");
+		
+		//change to double to see difference
+		float x = 0;
+		for(int i=0; i<10; i++) {
+			x += 1.0/10.0;
+			System.out.println(""+i+": "+x);
+		}
+		
 	} 
 }
