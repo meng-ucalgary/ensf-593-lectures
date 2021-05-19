@@ -2,13 +2,18 @@
 public class DataTypeTest {
 
 	public static void main(String[] args) {
-		double a = 65.2;
+		//concepts: promotion and casting
+		
+		double a = 65.8; // float 32 bits; double 64 bits
 		char b = 'A';
 		int c = (int)a;
 		//do we need casting here or will these be promoted.
 		int d = b;
-		char e = c;
-		short f = a;
+		char e = (char)c;
+		short f = (short)a;
+		byte g = (byte)1040;
+		
+		//byte, long, boolean
 		
 		System.out.println(a);
 		System.out.println(b);
@@ -16,6 +21,7 @@ public class DataTypeTest {
 		System.out.println(d);
 		System.out.println(e);
 		System.out.println(f);
+		System.out.println(g);
 		
 		System.out.println("----------------------------------------");
 		
@@ -27,7 +33,7 @@ public class DataTypeTest {
 		System.out.println("----------------------------------------");
 		
 		//change to double to see difference
-		float x = 0;
+		double x = 0;
 		for(int i=0; i<10; i++) {
 			x += 1.0/10.0;
 			System.out.println(""+i+": "+x);
