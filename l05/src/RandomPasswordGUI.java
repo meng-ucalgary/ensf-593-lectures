@@ -10,6 +10,7 @@ public class RandomPasswordGUI extends JFrame
 	
 	private JTextArea display;
 	private JButton goButton;
+	private JSpinner pwdLength;
 	private PasswordGenerator generator;
 	
 	public RandomPasswordGUI(String title) {
@@ -33,6 +34,12 @@ public class RandomPasswordGUI extends JFrame
   
 		goButton = new JButton("generate password");
 		
+		SpinnerModel possibleLengths =  new SpinnerNumberModel(10, //initial value  
+	                								8, //minimum value  
+	                								18, //maximum value  
+	                								1); //step  
+	    pwdLength = new JSpinner(possibleLengths);   
+		
 		
 		//adding  listeners
 		goButton.addActionListener(this);
@@ -40,6 +47,7 @@ public class RandomPasswordGUI extends JFrame
 		
 		JPanel inputPanel = new JPanel();
 		inputPanel.add(new JLabel("Choose password length: ")); 
+		inputPanel.add(pwdLength);
 		
 		contentPane.add("North", inputPanel);
 		contentPane.add("Center" , display );
@@ -57,7 +65,8 @@ public class RandomPasswordGUI extends JFrame
 		
 		if(e.getSource() == goButton) {
 			//TODO add call back functionality
-			String password = generator.generatePassword(15);
+			int length = (int)pwdLength.getValue();
+			String password = generator.generatePassword(length);
 			
 			display.setText(password);
 		} 
