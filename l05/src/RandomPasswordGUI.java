@@ -10,8 +10,11 @@ public class RandomPasswordGUI extends JFrame
 	
 	private JTextArea display;
 	private JButton goButton;
+	private PasswordGenerator generator;
 	
 	public RandomPasswordGUI(String title) {
+		
+		generator = new PasswordGenerator();
 		
 		buildGUI();
 		setTitle(title);
@@ -54,6 +57,9 @@ public class RandomPasswordGUI extends JFrame
 		
 		if(e.getSource() == goButton) {
 			//TODO add call back functionality
+			String password = generator.generatePassword(15);
+			
+			display.setText(password);
 		} 
 		
 	}
