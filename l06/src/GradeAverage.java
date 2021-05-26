@@ -27,6 +27,16 @@ public class GradeAverage {
 		//     if isNotValid(), give the user a hint what to enter.
 		double grade = 0.0;
 		
+		do {
+			grade = promptAndRead();
+			
+			if(isNotValid(grade)) {
+				System.out.println(""+grade+" is not a valid grade.");
+				System.out.println("Enter 0<= grade <=100");
+			}
+			
+		}while(isNotValid(grade));
+		
 		
 		return grade;
 		
@@ -46,7 +56,7 @@ public class GradeAverage {
 	 */
 	private boolean isNotValid(double input) {
 		//TODO implement check
-		return false;
+		return (input != 9999) && ((input < 0) || (input > 100));
 	}
 
 	/**
@@ -61,19 +71,26 @@ public class GradeAverage {
 		int count = 0;
 		
 		//TODO replace with getAndValidate()
-		double grade = promptAndRead(); // Initialize : priming input
+		double grade = getAndValidate();//promptAndRead(); // Initialize : priming input
 		
-		while (grade != 9999) {// Loop test : sentinel
+//		while (grade != 9999) {// Loop test : sentinel
+		while(true) {
+			
+			if((int)grade == 9999) {
+				break;
+			}
+			
 		      //
-			runningTotal += grade ; count ++;
+			runningTotal += grade ; 
+			count ++;
 			//TODO replace with getAndValidate()
-			grade = promptAndRead(); // Update : get next grade
+			grade = getAndValidate();//promptAndRead(); // Update : get next grade
 		} // while
 		
 		if (count > 0) // Guard against divide −by−zero 
 			return runningTotal / count; // Return the average
 		else
-		return 0;
+		return -1;
 	}
 
 	/**
@@ -88,8 +105,8 @@ public class GradeAverage {
 		
 		double gradeAvg = avg.calculateAverage();
 		
-		if(gradeAvg>0) System.out.println("Average is: "+gradeAvg);
-		else System.out.println("No grades enetered");
+		if(gradeAvg<0) System.out.println("No grades enetered");
+		else System.out.println("Average is: "+gradeAvg);
 		
 		
 
