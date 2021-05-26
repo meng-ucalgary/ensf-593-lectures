@@ -41,6 +41,18 @@ public class SkiJump {
 	private static void skiJumpDoWhile() {
 		
 		//TODO implement loops
+		int row = 0;
+		do {
+			
+			int col=0;
+			
+			do {
+				System.out.print("# ");
+				col++;
+			}while(col<=row);
+			System.out.println("--> "+row);
+			row++;
+		}while(row<7);
 		
 	}
 
@@ -59,6 +71,12 @@ public class SkiJump {
 	private static void skiJumpFor() {
 		
 		//TODO implement loops
+		for(int row=1; row <= 7;row++) {
+			for(int col=0; col < row; col++) {
+				System.out.print("# ");
+			}
+			System.out.println("--> "+row);
+		}
 		
 	}
 

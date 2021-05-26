@@ -19,11 +19,17 @@ public class Loops {
 										int steps,
 										double square) {
 		
+		double x = start;
+		
 		//TODO implement gradient descent
 		//TODO repeat steps times
-		//TODO x_{i+1} = x_i - lr * (x^2 - square)
+		for(int i=0; i<steps; i++) {
+			//TODO x_{i+1} = x_i - lr * (x^2 - square)
+			x = x - lr * (Math.pow(x, 2) - square);
+		}
 		
-		return 0.0;
+		
+		return x;
 	}
 	
 	/**
@@ -41,6 +47,20 @@ public class Loops {
 	public static void sequence(int N) {
 		//TODO implement according to specification using a while loop. 
 		//TODO method should print the entire sequence
+		
+//		System.out.println(N);
+		while(N != 0) {
+			System.out.println(N);
+			if(N%2 == 0) {//N is even
+				N = N/2;
+			}else {
+				N = (N-1)/2;
+			}
+//			System.out.println(N);
+			
+		}
+		System.out.println(N);
+		
 		
 	}
 	
@@ -61,7 +81,7 @@ public class Loops {
 		do{ // Repeat
 			amtGrass -= amtGrass * LOSSRATE; // Update amount
 			++nDays ;
-//			System.out.println(""+nDays+": "+amtGrass);
+			System.out.println(""+nDays+": "+amtGrass);
 		} while ( amtGrass > perCentGrass);
 		return nDays / 7;
 		} // losingGrass ()
@@ -70,11 +90,11 @@ public class Loops {
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 		
-//		System.out.println(gradientDescentSqrt(8.0, 0.1, 10, 16.0));
+//		System.out.println(gradientDescentSqrt(1.0, 0.1, 10, 2.0));
 		
 //		sequence(15);
 		
-//		System.out.println(losingGrass(50.0));;
+		System.out.println(losingGrass(50.0));;
 
 	}
 
