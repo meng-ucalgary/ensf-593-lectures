@@ -15,6 +15,10 @@ public class Parent {
 		return privateInt;
 	}
 	
+	protected void setPrivateInt(int v) {
+		privateInt = v;
+	}
+	
 	protected int protectedGetPrivateInt() {
 		return privateInt;
 	}

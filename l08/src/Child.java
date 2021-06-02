@@ -9,6 +9,7 @@ public class Child extends Parent{
 	public Child(int childValue) {
 		
 //		privateInt=childValue; //not allowed
+		super.setPrivateInt(childValue);
 		protectedInt=childValue+1;
 		publicInt=childValue+2;
 	}
