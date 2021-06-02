@@ -12,6 +12,7 @@ public class Animal1 {
 	public Animal1() {
 	}
 
+	@Override
 	public String toString() {
 		return "I am a " + kind + " and I go " + 
 				((Speakable)this).speak();
@@ -26,8 +27,8 @@ public class Animal1 {
 		//We instantiate this class, 
 		//but it is not a Speakable
 		// -> runtime error
-		a = new Animal1();
-		System.out.println(a.toString());
+//		Animal1 a = new Animal1();
+//		System.out.println(a.toString());
 
 	}
 

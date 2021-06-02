@@ -16,6 +16,7 @@ public abstract class Animal2 implements Speakable {
 	public Animal2() {
 	}
 
+	@Override
 	public String toString() {
 		return "I am a " + kind + " and I go " + 
 				this.speak();
@@ -25,12 +26,13 @@ public abstract class Animal2 implements Speakable {
 	public static void main(String[] args) {
 		Animal2 a = new Dog2();
 		
-		System.out.println(a.toString());
+		System.out.println(a);
+		
+		System.out.println(a.speak());
 		
 		Speakable s = (Speakable)a;
 		System.out.println(s.speak());
-		
-		String b = "hello";
+	
 		
 
 	}

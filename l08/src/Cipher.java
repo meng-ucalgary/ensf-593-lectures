@@ -21,7 +21,17 @@ public abstract class Cipher {
 	 * @return concatenated encrypted words
 	 */
 	public String encrypt(String s) {
-		return "";
+		StringTokenizer tok = new StringTokenizer(s);
+		StringBuffer buf = new StringBuffer();
+		
+		while(tok.hasMoreTokens()) {
+			String word = tok.nextToken();
+			buf.append(encode(word));
+			buf.append(" ");
+			
+			
+		}
+		return buf.toString();
 		
 	}
 	
@@ -35,15 +45,26 @@ public abstract class Cipher {
 	 * @return concatenated decrypted words
 	 */
 	public String decrypt(String s) {
-		return "";
+		StringTokenizer tok = new StringTokenizer(s);
+		StringBuffer buf = new StringBuffer();
+		
+		while(tok.hasMoreTokens()) {
+			String word = tok.nextToken();
+			buf.append(decode(word));
+			buf.append(" ");
+			
+			
+		}
+		return buf.toString();
 		
 	}
 	
 
 	//TODO add abstract encode
-	
+	public abstract String encode(String s);
 	
 	//TODO add abstract decode
+	public abstract String decode(String s);
 	
 	
 }
