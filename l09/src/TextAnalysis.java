@@ -9,7 +9,7 @@ public class TextAnalysis {
 		// TODO Auto-generated method stub
 		
 		
-		String fileName = "test.txt";
+		String fileName = "test2.txt";
 		Scanner s = null;
 		try {
 			s = new Scanner( new File(fileName));
@@ -42,15 +42,30 @@ public class TextAnalysis {
 
 	private static int countWords(String line) {
 		// TODO Auto-generated method stub
-		StringTokenizer tok = new StringTokenizer(line);
-		return tok.countTokens();
+//		StringTokenizer tok = new StringTokenizer(line);
+//		return tok.countTokens();
+		
+		String[] tok = line.trim().split("\\s");
+		
+//		for(int i=0; i< tok.length;i++) {
+//			System.out.println(""+i+":##"+tok[i]+"##");
+//		}
+		if(tok.length == 1 && tok[0].equals("")) return 0;
+		else return tok.length;
+		
 		
 	}
 	
 	private static int countSentences(String line) {
 		// TODO Auto-generated method stub
-		StringTokenizer tok = new StringTokenizer(line, ".!?");
-		return tok.countTokens();
+//		StringTokenizer tok = new StringTokenizer(line, ".!?");
+//		return tok.countTokens();
+		
+		String[] tok = line.trim().split("[.!?]");
+		
+		if(tok[0].equals("")) return 0;
+		else return tok.length;
+		
 	}
 
 }
