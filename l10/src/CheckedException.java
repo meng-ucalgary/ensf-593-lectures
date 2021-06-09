@@ -10,10 +10,24 @@ import java.io.FileNotFoundException;
  */
 public class CheckedException {
 
-
-	public static void main(String[] args){
+	public static void openFile(String filename) throws FileNotFoundException {
 		
-		Scanner s = new Scanner(new File("test.txt")); 
+		Scanner s = new Scanner(new File(filename));
+	}
+
+	public static void main(String[] args) throws FileNotFoundException{
+		
+		
+		openFile("test.txt");
+		
+//		Scanner s = new Scanner(new File("test.txt"));
+		
+//		try {
+//			Scanner s = new Scanner(new File("test.txt"));
+//		} catch (FileNotFoundException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		} 
 
 	}
 
