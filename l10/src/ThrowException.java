@@ -9,17 +9,21 @@ public class ThrowException {
 
 	/**
 	 * 
-	 * pre-condition: a and b need to be positive
+	 * pre-condition: a and b need to be positive AND a>b
 	 * 
 	 * @param a
 	 * @param b
 	 * @return sum of a and b
 	 * @throws IllegalArgumentException if a and be are non-positive
 	 */
-	public static int addPositive(int a, int b) throws IllegalArgumentException{
+	public static int addPositive(int a, int b) throws IllegalArgumentException, 
+													   UnsupportedOperationException{
 		//TODO implement method
 		if(a <=0 || b <=0) {
 			throw new IllegalArgumentException("a or b are <= 0. a="+a+" b="+b);
+		}
+		if(a<=b) {
+			throw new UnsupportedOperationException("a > b not satisfied. a="+a+" b="+b);
 		}
 		
 		
