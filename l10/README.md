@@ -17,6 +17,8 @@ Additional reading:
 ## Backlog
 Discussion on `Vector` and `ArrayList`, following lecture notes.
 
+This could be done in `jshell`, the [Java REPL](https://docs.oracle.com/javase/9/jshell/toc.htm)
+
 ## Introduction to Exceptions and try-catch
 
 - try block contains the *dangerous* code
