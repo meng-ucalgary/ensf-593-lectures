@@ -6,7 +6,7 @@
  * @author Yves
  *
  */
-public class LetterFreq { //TODO add Comparable interface
+public class LetterFreq implements Comparable { //TODO add Comparable interface
 	
 	private int freq;
 	private char letter;
@@ -29,9 +29,37 @@ public class LetterFreq { //TODO add Comparable interface
 	}
 	
 	//TODO add compareTo() method
+	@Override
+	public int compareTo(Object obj) {
+		LetterFreq that = (LetterFreq)obj;
+		
+		if(this.freq > that.freq) {
+			return 1;
+		}else if(this.freq < that.freq) {
+			return -1;
+		}else {
+			return 0;
+		}
+	}
 	
 	
 	//TODO add toString() method
+	@Override
+	public String toString() {
+		
+//		return String.format("%s(%d)", this.letter, this.freq);
+		
+		return ""+this.letter+"("+this.freq+")";
+	}
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	
 
 }

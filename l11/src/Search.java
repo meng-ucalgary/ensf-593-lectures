@@ -18,6 +18,18 @@ public class Search {
 	public int sequentialSearch(int[] arr, int key) {
 		//TODO implement sequential search.
 		
+		this.count=0;
+		
+		for(int i=0; i<arr.length; i++) {
+			if(arr[i] == key) {
+				return i;
+			}
+			this.count++;
+		}
+		
+		//key not found
+		return -1;
+		
 	}
 	
 	/**
@@ -29,22 +41,43 @@ public class Search {
 	public int binarySearch(int[] arr, int key, boolean verbose) {
 		
 		//TODO implement binary search
+		int low = 0;
+		int high = arr.length-1;
 		
+		
+		int mid=0;
+		
+		this.count=0;
+		
+		while(low<=high) {
 			
-//			if(verbose) {
-//				//print header the first time only
-//				if(count==0) {
-//					System.out.println("count\tlow\thigh\tmid\tarr[mid]");
-//				}
-//				System.out.println(""+count+"\t"+low+"\t"+high+"\t"+mid+"\t"+arr[mid]);
-//			}
+			mid = (low+high)/2;
+			if(verbose) {
+				//print header the first time only
+				if(count==0) {
+					System.out.println("count\tlow\thigh\tmid\tarr[mid]");
+				}
+				System.out.println(""+count+"\t"+low+"\t"+high+"\t"+mid+"\t"+arr[mid]);
+			}
 			
+			if(arr[mid] == key) {
+				return mid;
+			}else if(arr[mid]>key) {
+				high = mid-1;
+			}else {
+				low = mid+1;
+			}
+			
+			this.count++;
+			
+		}
 		
+		//arrive here if key was not found
+		if(verbose) {
+			System.out.println(""+count+"\t"+low+"\t"+high+"\t"+mid+"\t"+arr[mid]);
+		}
 		
-//		if(verbose) {
-//			System.out.println(""+count+"\t"+low+"\t"+high+"\t"+mid+"\t"+arr[mid]);
-//		}
-		
+		return -1;
 	
 	}
 
@@ -55,7 +88,7 @@ public class Search {
 		
 		int[] a = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20};
 		System.out.println(Arrays.toString(a));
-		int key = 19;
+		int key = -1;
 		System.out.println("Sequential: element "+key+
 				" is at index "+s.sequentialSearch(a, key)+
 				" found in "+s.getNumOfIterations()+" iterations.");

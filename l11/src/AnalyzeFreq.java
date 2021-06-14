@@ -56,10 +56,12 @@ public class AnalyzeFreq {
 //			System.out.println(lf.getLetter()+": "+lf.getFrequency());
 //		}
 		
-		//Regular for loop
-		for(int i=0; i< freqArr.length; i++) {
-			System.out.println(freqArr[i].getLetter()+": "+freqArr[i].getFrequency());
-		}
+//		//Regular for loop
+//		for(int i=0; i< freqArr.length; i++) {
+//			System.out.println(freqArr[i].getLetter()+": "+freqArr[i].getFrequency());
+//		}
+		
+		System.out.println(Arrays.toString(this.freqArr));
 		
 		
 	}
@@ -68,6 +70,20 @@ public class AnalyzeFreq {
 	 * @param descending if true, sort in descending order
 	 */
 	public void sort(boolean descending) {
+		
+		Sorting.insertionSort(freqArr, false);
+		//Alternative: Arrays.sort(freqArray);
+		
+		if(descending) {
+			//Alternative: Arrays.sort(freqArr, Collections.reverseOrder());
+			
+			for(int i=0; i<freqArr.length/2;i++) {
+				//swap left and right
+				LetterFreq temp = freqArr[i];
+				freqArr[i] = freqArr[freqArr.length-i-1];
+				freqArr[freqArr.length-i-1] = temp;
+			}
+		}
 		
 	
 	}
@@ -97,7 +113,7 @@ public class AnalyzeFreq {
 		analyzer.printArray();
 		//TODO call sort() and print again.
 		System.out.println("\n--- sort() printArray()  -------\n");
-		analyzer.sort(false);
+		analyzer.sort(true);
 		analyzer.printArray();
 		
 		
