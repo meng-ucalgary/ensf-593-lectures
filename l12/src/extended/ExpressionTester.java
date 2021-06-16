@@ -1,4 +1,4 @@
-package video;
+package extended;
 
 import java.util.HashMap;
 import java.util.Map;

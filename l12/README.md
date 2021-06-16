@@ -14,7 +14,7 @@ Additional reading:
 No backlog
 
 ## Course Review
-With Google Jamboard
+With [Google Jamboard](https://jamboard.google.com/d/1O6m1cCIH-SjCmIwWQUoVC-aBw7t_1qUrKKUEv62YffM/edit?usp=sharing)
 
 ## Implement Coding Trees in Java
 ### Implement as presented in video.
